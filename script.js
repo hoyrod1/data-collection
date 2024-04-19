@@ -62,7 +62,7 @@ for (let i = 0; i < csvData.length; i++) {
 // console.log(dataContainer);
 
 /****************************************************************************/
-console.log("====================== CSV ARRAY Format ======================");
+console.log("==================== Pt2 CSV ARRAY Format ====================");
 /****************************************************************************/
 let csvDataArray =
   "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
@@ -105,54 +105,92 @@ const csvArray = containerArr.push(
 );
 
 console.log(containerArr);
-
+console.log(csvArray);
 /****************************************************************************/
-console.log("================= Column Seperated Format =================");
+console.log("======================== TEST SOLUTION =======================");
+/****************************************************************************/
+//================= TEST SOLUTION ==================//
+let objKey = containerArr[0];
+const testArrObContainer = [];
+
+for (let i = 1; i < containerArr.length; i++) {
+  testArrObContainer[i - 1] = {};
+  for (let i2 = 0; i2 < containerArr.length - 1; i2++) {
+    testArrObContainer[i - 1][objKey[i2].toLowerCase()] = containerArr[i][i2];
+  }
+}
+console.log(testArrObContainer);
+// let id1 = containerArr[0][0].toLocaleLowerCase();
+// let name2 = containerArr[0][1].toLocaleLowerCase();
+// let occupation3 = containerArr[0][2].toLocaleLowerCase();
+// let age4 = containerArr[0][3].toLocaleLowerCase();
+// let testIterator = [];
+// let iterator = 1;
+// for (let i = 0; i < containerArr.length - 1; i++) {
+//   testArrOb[id1] = containerArr[i][0];
+//   testArrOb[name2] = containerArr[i][1];
+//   testArrOb[occupation3] = containerArr[i][2];
+//   testArrOb[age4] = containerArr[i][3];
+//   testArrObContainer.push(testArrOb);
+//   testIterator.push(iterator);
+//   iterator++;
+// }
+// console.log(testArrObContainer);
+// console.log(testIterator);
+/****************************************************************************/
+console.log("================== Part3: Transforming Data ==================");
 /****************************************************************************/
 /**
  -------------------------* CODE HOMEWORK EXAMPLE 2 *-------------------------
-
  [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
  { id: "98", name: "Bill", occupation: "Doctor’s Assistant", age: "26" }]
  */
-// let counter = 0;
-// data2.forEach((n, i) => {
-//   dataArr1.push({
-//     id: data2[i][0],
-//     name: data2[i][1],
-//     Occupation: data2[i][2],
-//     Age: data2[i][3],
-//   });
-// });
+//let containArr2 = containerArr.shift();
+let csvArrObj = [];
+let csvObj = {};
+
+containerArr.forEach((n) => {
+  csvArrObj.push({
+    id: n[0],
+    name: n[1],
+    occupation: n[2],
+    age: n[3],
+  });
+});
+// console.log(csvArrObj);
 
 // console.log(counter);
 // console.log(dataArr1);
 /****************************************************************************/
 console.log("=============================================================");
 /****************************************************************************/
-
-// data2 array stores //
-// const data2 = [row1a, row2a, row3a, row4a, row5a];
-// const data2 = [row2a, row3a, row4a, row5a];
-// console.log(data2);
 //**************************************************************************//
 // const data2 = [column1];
-// const dataArr = [];
+const dataArr = [];
 // let count = 0;
 // console.log(data2);
-// for (const cell2 of data2) {
-//   // console.log(`| ${cell2[0]} | ${cell2[1]}  ${cell2[2]}  ${cell2[3]} `);
-//   dataArr.push({
-//     id: cell2[0],
-//     name: cell2[1],
-//     Occupation: cell2[2],
-//     Age: cell2[3],
-//   });
-// }
+for (const cell2 of containerArr) {
+  // cell2[0] cell2[1] cell2[2] cell2[3] //
+  //    id     name   ocuppation  age    //
+  dataArr.push({
+    id: cell2[0],
+    name: cell2[1],
+    Occupation: cell2[2],
+    Age: cell2[3],
+  });
+}
 // console.log(dataArr);
-//const nameKey = [];
-// let c = 1;
+/****************************************************************************/
+const dataArr2 = [];
+const obj2 = {};
 
+for (let i = 0; i < containerArr.length - 1; i++) {
+  dataArr2.push({});
+}
+// console.log(dataArr2);
+
+/****************************************************************************/
+console.log("=============================================================");
 /****************************************************************************/
