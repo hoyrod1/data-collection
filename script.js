@@ -107,7 +107,7 @@ const csvArray = containerArr.push(
 console.log(containerArr);
 console.log(csvArray);
 /****************************************************************************/
-console.log("======================== TEST SOLUTION =======================");
+console.log("================== Part3: Transforming Data ==================");
 /****************************************************************************/
 //================= TEST SOLUTION ==================//
 let objKey = containerArr[0];
@@ -120,6 +120,61 @@ for (let i = 1; i < containerArr.length; i++) {
   }
 }
 console.log(testArrObContainer);
+/****************************************************************************/
+console.log("============ Part 4: Sorting and Manipulating Data ============");
+/****************************************************************************/
+console.log("=== 1 ==========================================================");
+/****************************************************************************/
+testArrObContainer.pop();
+console.log(testArrObContainer);
+/****************************************************************************/
+console.log("=== 2 ==========================================================");
+/****************************************************************************/
+testArrObContainer.unshift({
+  id: "48",
+  name: "Barry",
+  occupation: "Runner",
+  age: "25",
+});
+console.log(testArrObContainer);
+/****************************************************************************/
+console.log("=== 3 ==========================================================");
+/****************************************************************************/
+testArrObContainer.push({
+  id: "7",
+  name: "Bilbo",
+  occupation: "None",
+  age: "111",
+});
+console.log(testArrObContainer);
+/****************************************************************************/
+console.log("============ Calculate the average age of the group ============");
+/****************************************************************************/
+
+// let arrLength = testArrObContainer.length;
+// let age1 = parseInt(testArrObContainer[0].age);
+// let age2 = parseInt(testArrObContainer[1].age);
+// let age3 = parseInt(testArrObContainer[2].age);
+// let age4 = parseInt(testArrObContainer[3].age);
+// let age5 = parseInt(testArrObContainer[4].age);
+
+// console.log(
+//   `The average age of this group is ${
+//     (age1 + age2 + age3 + age4 + age5) / arrLength
+//   } without being loopy!!! ;)`
+// );
+//--------------------------------------------------------------------------//
+let arrLength = testArrObContainer.length;
+let ageCount = 0;
+for (let i = 0; i < testArrObContainer.length; i++) {
+  ageCount += parseInt(testArrObContainer[i].age);
+}
+console.log(
+  `The average age of this group is ${ageCount / arrLength} being loopy!!! ;)`
+);
+/****************************************************************************/
+console.log("======================== TEST SOLUTIONS =======================");
+/****************************************************************************/
 // let id1 = containerArr[0][0].toLocaleLowerCase();
 // let name2 = containerArr[0][1].toLocaleLowerCase();
 // let occupation3 = containerArr[0][2].toLocaleLowerCase();
@@ -138,7 +193,7 @@ console.log(testArrObContainer);
 // console.log(testArrObContainer);
 // console.log(testIterator);
 /****************************************************************************/
-console.log("================== Part3: Transforming Data ==================");
+console.log("======================== TEST SOLUTIONS =======================");
 /****************************************************************************/
 /**
  -------------------------* CODE HOMEWORK EXAMPLE 2 *-------------------------
@@ -164,7 +219,7 @@ containerArr.forEach((n) => {
 // console.log(counter);
 // console.log(dataArr1);
 /****************************************************************************/
-console.log("=============================================================");
+console.log("======================== TEST SOLUTIONS =======================");
 /****************************************************************************/
 //**************************************************************************//
 // const data2 = [column1];
@@ -192,5 +247,5 @@ for (let i = 0; i < containerArr.length - 1; i++) {
 // console.log(dataArr2);
 
 /****************************************************************************/
-console.log("=============================================================");
+console.log("===============================================================");
 /****************************************************************************/
