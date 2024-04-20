@@ -143,7 +143,7 @@ console.log("=== 3 ==========================================================");
 testArrObContainer.push({
   id: "7",
   name: "Bilbo",
-  occupation: "None",
+  occupation: "Retired",
   age: "111",
 });
 console.log(testArrObContainer);
@@ -164,7 +164,7 @@ console.log("============ Calculate the average age of the group ============");
 //   } without being loopy!!! ;)`
 // );
 //--------------------------------------------------------------------------//
-let arrLength = testArrObContainer.length;
+const arrLength = testArrObContainer.length;
 let ageCount = 0;
 for (let i = 0; i < testArrObContainer.length; i++) {
   ageCount += parseInt(testArrObContainer[i].age);
@@ -172,6 +172,42 @@ for (let i = 0; i < testArrObContainer.length; i++) {
 console.log(
   `The average age of this group is ${ageCount / arrLength} being loopy!!! ;)`
 );
+/****************************************************************************/
+console.log("===================== Part 5: Full Circle =====================");
+/****************************************************************************/
+// This array will store all the values from the array of objects
+const orgCSV = [];
+//-------------------------------------------------------------------------//
+// arrObjKey stores the keys from the first object from the "testArrObContainer" array
+const arrObjKey = Object.keys(testArrObContainer[0]);
+// console.log(arrObjKey);
+//-------------------------------------------------------------------------//
+// This join returns the array from the object keys as strings with the "," as the separator
+let arrObjKeyComa = arrObjKey.join(",");
+// console.log(arrObjKeyComa);
+//-------------------------------------------------------------------------//
+// The comma separated strings is pushed in the "orgCSV" array
+orgCSV.push(arrObjKeyComa);
+
+for (const objRow of testArrObContainer) {
+  // The for of loop loops through all of its object
+  // The map method returns an array of all the object values using their keys
+  const objValues = arrObjKey.map((arrObjKey) => {
+    let objValue = objRow[arrObjKey];
+    return objValue;
+  });
+
+  // This join returns this array as a string with the "," as the separator
+  orgCSV.push(objValues.join(","));
+}
+// console.log(orgCSV);
+// Join returns this array as a string with the "\n" as the separator
+const orgCSVString = orgCSV.join("\n");
+console.log(orgCSVString);
+//-------------------------------------------------------------------------//
+/****************************************************************************/
+/****************************************************************************/
+/****************************************************************************/
 /****************************************************************************/
 console.log("======================== TEST SOLUTIONS =======================");
 /****************************************************************************/
@@ -203,17 +239,17 @@ console.log("======================== TEST SOLUTIONS =======================");
  { id: "98", name: "Bill", occupation: "Doctor’s Assistant", age: "26" }]
  */
 //let containArr2 = containerArr.shift();
-let csvArrObj = [];
-let csvObj = {};
+// let csvArrObj = [];
+// let csvObj = {};
 
-containerArr.forEach((n) => {
-  csvArrObj.push({
-    id: n[0],
-    name: n[1],
-    occupation: n[2],
-    age: n[3],
-  });
-});
+// containerArr.forEach((n) => {
+//   csvArrObj.push({
+//     id: n[0],
+//     name: n[1],
+//     occupation: n[2],
+//     age: n[3],
+//   });
+// });
 // console.log(csvArrObj);
 
 // console.log(counter);
@@ -222,28 +258,34 @@ containerArr.forEach((n) => {
 console.log("======================== TEST SOLUTIONS =======================");
 /****************************************************************************/
 //**************************************************************************//
+
+// const anotnerTest = [];
+// anotnerTest[0] = {};
+// anotnerTest[1] = {};
+// anotnerTest[2] = {};
+// console.log(anotnerTest);
 // const data2 = [column1];
-const dataArr = [];
+// const dataArr = [];
 // let count = 0;
 // console.log(data2);
-for (const cell2 of containerArr) {
-  // cell2[0] cell2[1] cell2[2] cell2[3] //
-  //    id     name   ocuppation  age    //
-  dataArr.push({
-    id: cell2[0],
-    name: cell2[1],
-    Occupation: cell2[2],
-    Age: cell2[3],
-  });
-}
+// for (const cell2 of containerArr) {
+//   // cell2[0] cell2[1] cell2[2] cell2[3] //
+//   //    id     name   ocuppation  age    //
+//   dataArr.push({
+//     id: cell2[0],
+//     name: cell2[1],
+//     Occupation: cell2[2],
+//     Age: cell2[3],
+//   });
+// }
 // console.log(dataArr);
 /****************************************************************************/
-const dataArr2 = [];
-const obj2 = {};
+// const dataArr2 = [];
+// const obj2 = {};
 
-for (let i = 0; i < containerArr.length - 1; i++) {
-  dataArr2.push({});
-}
+// for (let i = 0; i < containerArr.length - 1; i++) {
+//   dataArr2.push({});
+// }
 // console.log(dataArr2);
 
 /****************************************************************************/
